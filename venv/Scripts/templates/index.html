@@ -10,8 +10,12 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<link rel="stylesheet" href="path/to/pyscript.css" />
+		<script defer src="path/to/pyscript.js"></script>
 	</head>
 	<body>
+
+
 
 		<div id="wrapper">
 		<header>
@@ -23,9 +27,9 @@
 					<ul class="nav-links">
 
 
-						<a href="topScores/index.html">
-							<li class="nav-link-buttons">Top Scores</li>
-						</a>
+<!--						<a href="topScores/index.html">-->
+<!--							<li class="nav-link-buttons">Top Scores</li>-->
+<!--						</a>-->
 
 					
 					</ul>
@@ -44,6 +48,13 @@
 						<div id="inner">
 							<div>
 								<h3><button type="button">!PLAY HUNGRY TURTLE NOW!</button></h3>
+								<div id="game"></div>
+								<py-script src="game.py">
+
+									This is Pyscript
+
+								</py-script>
+
 								<h4> How the game works:<br><br><br>
 								Help the Hungry Turtle to eat as much fish as possible<br><br>before running into his predators!
 									<br><br> You'll have 3 Lives and for every fish you eat<br><br> you'll gain 1 point!

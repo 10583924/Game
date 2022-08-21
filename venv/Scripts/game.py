@@ -107,6 +107,11 @@ def moveLeft():
 def moveRight():
     t.direction = 'right'
 
+def start_game():
+    global game_state
+    game_state = "game"
+
+
 # Set window bindings
 window.listen()
 window.onkeypress(moveUp, 'Up')
@@ -114,11 +119,13 @@ window.onkeypress(moveDown, 'Down')
 window.onkeypress(moveLeft, 'Left')
 window.onkeypress(moveRight, 'Right')
 
+
 # - - - - - - - - - - - - - - - - - - - - - - #
 # Main Game Loop
 # - - - - - - - - - - - - - - - - - - - - - - #
 while True:
     window.update()
+
 
     # Border collision
     if t.xcor()>390 or t.xcor()<-390 or t.ycor()>390 or t.ycor()<-390 :
@@ -171,5 +178,6 @@ while True:
 
     movement()
     predatorMovement()
+
 
 delay = raw_input('Press enter to finish')
