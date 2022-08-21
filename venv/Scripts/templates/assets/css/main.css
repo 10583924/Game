@@ -1,0 +1,134 @@
+*{margin:0;
+	}
+
+html, body{
+	height: 100%;
+}
+
+#wrapper{
+	float: left;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	padding-bottom: 100%;
+	box-sizing: border-box;
+	background-color: #34ebd5;
+}
+
+header{
+	float: left;
+	width: 100%;
+	height: 60px;
+	background: #34ebd5;
+	font-family: 'Press Start 2P', cursive;
+}
+
+ul.nav-links{
+	float: center;
+	margin-right: 40px;
+}
+
+li.nav-link-buttons-active{
+	display: inline;
+	list-style-type: none;
+	float: center;
+	width: 100px;
+	height: 43px;
+	background: #34ebd5;
+	margin-left: 5px;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 17px;
+	color:#276961;
+}
+
+a:link li.nav-link-buttons{
+	color: #276961;
+	background:#34ebd5; 
+}
+a:visited li.nav-link-buttons{
+	color: #276961;
+	background: #34ebd5; 
+}
+a:hover li.nav-link-buttons{
+	color: #276961;
+	background: #ebf2f6;
+}
+a:active li.nav-link-buttons{
+	color: #276961;
+	background: #34ebd5; 
+}
+
+li.nav-link-buttons{
+	display: inline;
+	list-style-type: none;
+	float: left;
+	width: 100px;
+	height: 43px;
+	margin-left: 5px;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 17px;
+}
+
+main.fixed-header-main{
+	float: left;
+	margin-top: 60px;
+	background-color:#babfb0;
+}
+
+h1{
+	text-align: center;
+	color: #82c418;
+	padding-top: 100px;
+	font-size: 60px;
+	font-family: 'Press Start 2P', cursive;
+}
+
+h2{
+	text-align: center;
+	color: #fff;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	font-family: 'Press Start 2P', cursive;
+}
+h3{
+	text-align: center;
+	color: #125fc4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	font-family: 'Press Start 2P', cursive;
+}
+
+button{
+    color: #125fc4;
+    font-size: 30px;
+	font-family: 'Press Start 2P', cursive;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color:#aaf542;
+	cursor: pointer;
+}
+
+
+#outer-box{
+	height:auto;
+	width: 800px;
+	background: #bfbeb0;
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#inner-box{
+	float: left;
+	width: 620px;
+	height: 330px;
+	color: #bfbeb0;
+	font-size: 50px;
+	padding: 100px;
+	box-sizing: border-box;
+	align-items: center;
+}
