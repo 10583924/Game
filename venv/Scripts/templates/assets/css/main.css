@@ -102,6 +102,15 @@ h3{
 	font-family: 'Press Start 2P', cursive;
 }
 
+h4{
+	text-align: center;
+	color: #125fc4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 15px;
+	font-family: 'Press Start 2P', cursive;
+}
+
 button{
     color: #125fc4;
     font-size: 30px;
@@ -110,6 +119,20 @@ button{
 	padding-bottom: 20px;
 	background-color:#aaf542;
 	cursor: pointer;
+}
+
+video{
+
+    object-fit:cover;
+    width: 100%
+    margin-top: 0px;
+    height: 600px;
+    position: relative;
+    top:50px;
+    left:400px;
+    background: red;
+
+
 }
 
 
