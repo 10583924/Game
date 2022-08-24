@@ -3,6 +3,7 @@ import turtle
 import random
 import time
 
+
 # define the values of the number of lives and the starting score count
 lives = 3
 score = 0
