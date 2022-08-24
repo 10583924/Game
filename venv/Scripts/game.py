@@ -12,8 +12,9 @@ score = 0
 window = turtle.Screen()
 window.tracer(0)
 window.title('Turtle ')
-window.bgcolor('light blue')
-window.setup(800,800)
+window.bgcolor('#34ebd5')
+window.bgpic("under_the.gif")
+window.setup(1000,1000)
 
 # Define the turtle icon
 t = turtle.Turtle()
@@ -31,10 +32,10 @@ for x in range(10):
     predator.penup()
     predator.color('red')
     predator.shape('circle')
-    predator.shapesize(stretch_wid=1.3, stretch_len=1.3)
+    predator.shapesize(stretch_wid=1, stretch_len=1)
     predator.speed = 0.5
-    x = random.randint(-380,380)
-    y = random.randint(-380, 380)
+    x = random.randint(-480,480)
+    y = random.randint(-480, 480)
     predator.setposition(x,y)
     predators.append(predator)
 
@@ -42,9 +43,9 @@ pen = turtle.Turtle()
 pen.speed(0)
 pen.color('black')
 pen.penup()
-pen.goto(0,320)
+pen.goto(0,420)
 pen.pendown()
-pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
+pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
 pen.hideturtle()
 
 # Define the fish (food that the turtles eat)
@@ -53,11 +54,11 @@ for _ in range(40):
     f = turtle.Turtle()
     f.speed(0)
     f.penup()
-    f.color('dark blue')
-    f.shape('circle')
+    f.color('yellow')
+    f.shape('triangle')
     f.shapesize(stretch_wid=1, stretch_len=1)
-    x = random.randint(-380,380)
-    y = random.randint(-380, 380)
+    x = random.randint(-480,480)
+    y = random.randint(-480, 480)
     f.setposition(x,y)
     fish.append(f)
 
@@ -128,10 +129,10 @@ while True:
 
 
     # Border collision
-    if t.xcor()>390 or t.xcor()<-390 or t.ycor()>390 or t.ycor()<-390 :
+    if t.xcor()>490 or t.xcor()<-490 or t.ycor()>490 or t.ycor()<-490 :
         lives-= 1
         pen.clear()
-        pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
+        pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
         time.sleep(1)
         t.goto(0,0)
 
@@ -141,8 +142,8 @@ while True:
         score=0
         lives=3
         pen.clear()
-        pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
-        time.sleep(1)
+        pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
+        time.sleep(2)
         t.goto(0,0)
 
 
@@ -152,16 +153,16 @@ while True:
             score+=1
             pen.clear()
             pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
-            x = random.randint(-380, 380)
-            y = random.randint(-380, 380)
+            x = random.randint(-480, 480)
+            y = random.randint(-480, 480)
             f.goto(x,y)
 
 
     # Prdeator and border
     for predator in predators:
-        if predator.xcor()>390 or predator.xcor()<-390 or predator.ycor()>390 or predator.ycor()<-390:
-            x = random.randint(-380, 380)
-            y = random.randint(-380, 380)
+        if predator.xcor()>490 or predator.xcor()<-490 or predator.ycor()>490 or predator.ycor()<-490:
+            x = random.randint(-480, 480)
+            y = random.randint(-480, 480)
             predator.goto(x,y)
             predatorMovement()
 
@@ -170,9 +171,10 @@ while True:
         if t.distance(predator) < 10:
             lives -=1
             pen.clear()
-            pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
+            pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
             time.sleep(1)
             t.goto(0, 0)
+
 
 
 
