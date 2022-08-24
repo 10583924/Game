@@ -3,20 +3,22 @@ import turtle
 import random
 import time
 
-# define the values
+# define the values of the number of lives and the starting score count
 lives = 3
 score = 0
+high_score = 0
 
 
-# Set up the window that will appear on screen (test)
+# Set up the window that will appear on screen when you press run
+# inluding the background image of the game
 window = turtle.Screen()
 window.tracer(0)
-window.title('Turtle ')
+window.title('Turtle')
 window.bgcolor('#34ebd5')
 window.bgpic("under_the.gif")
 window.setup(1000,1000)
 
-# Define the turtle icon
+# Define the turtle icon, size and colour
 t = turtle.Turtle()
 t.speed(0)
 t.penup()
@@ -25,7 +27,7 @@ t.shape('turtle')
 t.direction = 'stop'
 t.shapesize(stretch_wid=3, stretch_len=3)
 
-# Define the list for predators that will hunt the turtles
+# Define the list for predators that will hunt the turtles and their size and colour
 predators = []
 for x in range(10):
     predator = turtle.Turtle()
@@ -39,6 +41,7 @@ for x in range(10):
     predator.setposition(x,y)
     predators.append(predator)
 
+# define the score and lives to be visible on the top of the screen
 pen = turtle.Turtle()
 pen.speed(0)
 pen.color('black')
@@ -46,9 +49,10 @@ pen.penup()
 pen.goto(0,420)
 pen.pendown()
 pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
+pen.penup()
 pen.hideturtle()
 
-# Define the fish (food that the turtles eat)
+# Define the fish (the food that the turtles eat) and their size and colour
 fish = []
 for _ in range(40):
     f = turtle.Turtle()
@@ -66,22 +70,22 @@ for _ in range(40):
 def movement():
     if t.direction == 'up':
         y = t.ycor()
-        y+= 0.7
+        y+= 1.5
         t.sety(y)
 
     if t.direction == 'down':
         y = t.ycor()
-        y-= 0.7
+        y-= 1.5
         t.sety(y)
 
     if t.direction == 'left':
         x = t.xcor()
-        x-= 0.7
+        x-= 1.5
         t.setx(x)
 
     if t.direction == 'right':
         x = t.xcor()
-        x+= 0.7
+        x+= 1.5
         t.setx(x)
 
 
@@ -128,23 +132,27 @@ while True:
     window.update()
 
 
-    # Border collision
+    # Border collision to determine the sides of the game
     if t.xcor()>490 or t.xcor()<-490 or t.ycor()>490 or t.ycor()<-490 :
         lives-= 1
         pen.clear()
         pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
+        pen.penup()
         time.sleep(1)
         t.goto(0,0)
 
 
-    # Check Lives
+    # Check Lives left
     if lives == 0:
         score=0
         lives=3
         pen.clear()
         pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
-        time.sleep(2)
+        pen.penup()
+        time.sleep(3)
         t.goto(0,0)
+
+
 
 
     # Food and Turtle collision
@@ -152,7 +160,8 @@ while True:
         if t.distance(f) < 10:
             score+=1
             pen.clear()
-            pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 20))
+            pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
+            pen.penup()
             x = random.randint(-480, 480)
             y = random.randint(-480, 480)
             f.goto(x,y)
@@ -172,6 +181,7 @@ while True:
             lives -=1
             pen.clear()
             pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
+            pen.penup()
             time.sleep(1)
             t.goto(0, 0)
 
@@ -181,5 +191,3 @@ while True:
     movement()
     predatorMovement()
 
-
-delay = raw_input('Press enter to finish')
