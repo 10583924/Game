@@ -8,7 +8,7 @@ import time
 lives = 3
 score = 0
 high_score = 0
-
+playerName = turtle.textinput("Hello Player!", "What is your name? ")
 
 # Set up the window that will appear on screen when you press run
 # inluding the background image of the game
@@ -52,6 +52,8 @@ pen.pendown()
 pen.write('HUNGRY TURTLE POINTS: {}                 LIVES: {}'.format(score, lives), align='center', font=('Comic Sans MS', 30))
 pen.penup()
 pen.hideturtle()
+
+
 
 # Define the fish (the food that the turtles eat) and their size and colour
 fish = []
@@ -129,6 +131,7 @@ window.onkeypress(moveRight, 'Right')
 # - - - - - - - - - - - - - - - - - - - - - - #
 # Main Game Loop
 # - - - - - - - - - - - - - - - - - - - - - - #
+
 while True:
     window.update()
 
