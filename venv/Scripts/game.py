@@ -8,7 +8,6 @@ import time
 lives = 3
 score = 0
 high_score = 0
-playerName = turtle.textinput("Hello Player!", "What is your name? ")
 
 # Set up the window that will appear on screen when you press run
 # inluding the background image of the game
@@ -157,8 +156,6 @@ while True:
         t.goto(0,0)
 
 
-
-
     # Food and Turtle collision
     for f in fish:
         if t.distance(f) < 10:
@@ -188,8 +185,6 @@ while True:
             pen.penup()
             time.sleep(1)
             t.goto(0, 0)
-
-
 
 
     movement()
