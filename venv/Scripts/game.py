@@ -4,7 +4,7 @@ import random
 import time
 
 
-# define the values of the number of lives and the starting score count
+# Define the values of the number of lives and the starting score count
 lives = 3
 score = 0
 high_score = 0
@@ -41,7 +41,7 @@ for x in range(10):
     predator.setposition(x,y)
     predators.append(predator)
 
-# define the score and lives to be visible on the top of the screen
+# Define the score and lives to be visible on the top of the screen throughout the game
 pen = turtle.Turtle()
 pen.speed(0)
 pen.color('black')
@@ -68,7 +68,7 @@ for _ in range(40):
     f.setposition(x,y)
     fish.append(f)
 
-# Define the movements of the turtles
+# Define the movements of the turtles. a.k.a the event handlers.
 def movement():
     if t.direction == 'up':
         y = t.ycor()
@@ -119,7 +119,8 @@ def start_game():
     game_state = "game"
 
 
-# Set window bindings
+# Set window bindings and the functionality of the keypresses
+# Set up the window to listen for the event handlers.
 window.listen()
 window.onkeypress(moveUp, 'Up')
 window.onkeypress(moveDown, 'Down')
@@ -145,7 +146,7 @@ while True:
         t.goto(0,0)
 
 
-    # Check Lives left
+    # Check the number of lives left
     if lives == 0:
         score=0
         lives=3
