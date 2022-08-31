@@ -1,8 +1,8 @@
 
 # ---- The Hungry Turtle Game by Leanne Kennedy ----
 
-
 # Firstly, import the modules needed for the game: turtle, random and time.
+
 import turtle
 import random
 import time
